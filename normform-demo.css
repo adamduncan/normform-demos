@@ -1,0 +1,86 @@
+/*-------------------------------
+	DOCUMENT STYLES
+-------------------------------*/
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	background-color: #eee;
+	color: #333;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-size: 100%; /* 16px */
+	height: 100%;
+	line-height: 1.625; /* 26px */
+	margin: 0;
+}
+
+
+
+
+/*-------------------------------
+	FORM STYLES
+-------------------------------*/
+
+.form-field {
+	margin: 0 0 1rem;
+	position: relative;
+}
+label {
+	display: block;
+}
+input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+	display: block;
+	width: 100%;
+}
+
+
+
+
+/*-------------------------------
+	VALIDATION STYLES
+-------------------------------*/
+
+.validation-msg {
+	opacity: 0;
+	transition: opacity 250ms ease-out;
+}
+.normform-invalid {
+	border-color: #e63946;
+}
+.normform-invalid:focus {
+	box-shadow: 0 0 2px 0 #e63946;
+}
+.normform-invalid ~ .validation-msg,
+.normform-invalid .validation-msg {
+	color: #e63946;
+	opacity: 1;
+}
+/* valid marked (scoping for now, separate in demos) */
+.valid-marked .normform-valid,
+.valid-marked .normform-valid ~ [type] {
+	border-color: #35b1a1;
+}
+.valid-marked .normform-valid ~ .validation-msg,
+.valid-marked .normform-valid .validation-msg {
+	background-color: #35b1a1;
+	border-radius: 50%;
+	display: block;
+	height: 1.25rem;
+	opacity: 1;
+	position: absolute;
+	right: -2.5rem;
+	top: 0;
+	width: 1.25rem;
+}
